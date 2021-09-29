@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import './index.scss'
+import useGetRequest from "./api/useGetRequest";
+import SessionTable from "./sessions/SessionTable";
+
 
 function App() {
+  const {rowData} = useGetRequest({path: "someIdOderSoKp"});
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={"lander"}>
+      <h2>
+        All Sessions
+        <SessionTable/>
+      </h2>
     </div>
   );
 }
