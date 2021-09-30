@@ -31,19 +31,19 @@ export default function SessionTable() {
   return(
     <div className={"grid grid-cols-2"}>
       <div className={"col-span-1 h-10 card bg-base-300 rounded-box place-items-center mr-2"}>
-        <h2 className={"align-middle m-auto"}>All Sessions</h2>
+        <h1 className={"align-middle m-auto"}>All sessions</h1>
       </div>
       <div className={"col-span-1 h-10 card bg-base-300 rounded-box place-items-center"}>
-        <h2 className={"align-middle m-auto"}>Track Highscoreboard</h2>
+        <h1 className={"align-middle m-auto"}>Track scoreboard</h1>
       </div>
       <div className="overflow-x-auto mt-2 mr-2">
         <table className="table w-full">
           <thead>
           <tr>
-            <th>ID</th>
-            <th>Session</th>
-            <th>Date</th>
             <th/>
+            <th>Session</th>
+            <th>Session type</th>
+            <th>Date</th>
           </tr>
           </thead>
           <tbody >

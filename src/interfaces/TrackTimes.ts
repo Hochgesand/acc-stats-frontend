@@ -5,4 +5,5 @@ export default interface TrackTimes{
   bestLapTimeFormatted: string
   bestTimedriverId: number
   trackName: string
+  bestTimeSessionId: number
 }

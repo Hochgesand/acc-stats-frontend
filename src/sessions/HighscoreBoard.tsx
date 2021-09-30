@@ -30,10 +30,11 @@ export default function HighscoreBoard(){
       <table className="table w-full">
         <thead>
         <tr>
-          <th>Track</th>
-          <th>Best laptime</th>
-          <th>avg laptime</th>
           <th/>
+          <th>Track</th>
+          <th>avg laptime of all laps</th>
+          <th>Best laptime...</th>
+          <th>...of player</th>
         </tr>
         </thead>
         <tbody >
@@ -44,7 +45,8 @@ export default function HighscoreBoard(){
             bestLapTime={item.bestLapTime}
             bestLapTimeFormatted={item.bestLapTimeFormatted}
             bestTimedriverId={item.bestTimedriverId}
-            trackName={item.trackName} />)}
+            trackName={item.trackName}
+            bestTimeSessionId={item.bestTimeSessionId}/>)}
         </tbody>
       </table>
     </div>
