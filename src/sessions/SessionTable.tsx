@@ -12,14 +12,14 @@ export default function SessionTable() {
   const {getData} = useGetRequest({path: `${BackendEndpointSessions}`});
 
   useEffect(() => {
-      async function fetchData() {
-        await getData().then(function (json){
-          setData(json);
-          setLoading(false)
-        });
-      }
-      fetchData();
-    });
+    async function fetchData() {
+      await getData().then(function (json){
+        setData(json);
+        setLoading(false)
+      });
+    }
+    fetchData();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (loading){
     return (

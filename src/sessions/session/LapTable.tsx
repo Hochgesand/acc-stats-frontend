@@ -13,7 +13,6 @@ export default function LapTable(sessionBigData: SessionBigData){
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("")
   const path = `${BackendEndpointSession}/${sessionBigData.session?.id}/laps`;
-  console.log(path)
   const {getData} = useGetRequest({path: path})
 
   useEffect(() => {
@@ -37,9 +36,8 @@ export default function LapTable(sessionBigData: SessionBigData){
         }
       );
     }
-
     fetchData();
-  });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 
 

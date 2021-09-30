@@ -49,7 +49,7 @@ export default function Session({id}: propId) {
         );
       }
       fetchData();
-    });
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (loading){
     return <Loading/>
