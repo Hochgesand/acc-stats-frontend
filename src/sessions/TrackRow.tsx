@@ -31,7 +31,6 @@ export default function TrackRow(trackTimes: TrackTimes){
     <tr>
       <td><a href={"/session/" + trackTimes.bestTimeSessionId}><button className={"btn"}>Go To Session</button></a></td>
       <td>{trackTimes.trackName}</td>
-      <td >{trackTimes.avgLapTimeFormatted}</td>
       <td >{trackTimes.bestLapTimeFormatted}</td>
       <td >{(data.shortName + " - " + data.firstName + " " + data.lastName)}</td>
   </tr>

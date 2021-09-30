@@ -1,4 +1,5 @@
 import {Lap} from "../../interfaces/sessionData/Lap";
+import React from "react";
 
 interface IJaNein {
   num: number

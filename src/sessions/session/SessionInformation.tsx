@@ -7,7 +7,7 @@ export default function SessionInformation(driveSession: DriveSession) {
         <h2>Sessioninformation</h2>
       </div>
       <div className="h-10 w-11/12 card bg-base-200 rounded-box place-items-center m-2 p-2">
-        {driveSession.id}
+        {driveSession.created_at}
       </div>
       <div className="h-10 card w-11/12 bg-base-200 rounded-box place-items-center m-2 p-2">
         {driveSession.trackName}

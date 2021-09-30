@@ -32,9 +32,8 @@ export default function HighscoreBoard(){
         <tr>
           <th/>
           <th>Track</th>
-          <th>avg laptime of all laps</th>
-          <th>Best laptime...</th>
-          <th>...of player</th>
+          <th>Best laptime</th>
+          <th>player</th>
         </tr>
         </thead>
         <tbody >
