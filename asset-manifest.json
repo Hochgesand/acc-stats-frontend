@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/acc-stats-frontend/static/css/main.c4e50b0d.chunk.css",
-    "main.js": "/acc-stats-frontend/static/js/main.23fe4642.chunk.js",
-    "main.js.map": "/acc-stats-frontend/static/js/main.23fe4642.chunk.js.map",
-    "runtime-main.js": "/acc-stats-frontend/static/js/runtime-main.342ac63e.js",
-    "runtime-main.js.map": "/acc-stats-frontend/static/js/runtime-main.342ac63e.js.map",
-    "static/js/2.280aa48e.chunk.js": "/acc-stats-frontend/static/js/2.280aa48e.chunk.js",
-    "static/js/2.280aa48e.chunk.js.map": "/acc-stats-frontend/static/js/2.280aa48e.chunk.js.map",
-    "static/js/3.831f1db6.chunk.js": "/acc-stats-frontend/static/js/3.831f1db6.chunk.js",
-    "static/js/3.831f1db6.chunk.js.map": "/acc-stats-frontend/static/js/3.831f1db6.chunk.js.map",
-    "index.html": "/acc-stats-frontend/index.html",
-    "static/css/main.c4e50b0d.chunk.css.map": "/acc-stats-frontend/static/css/main.c4e50b0d.chunk.css.map",
-    "static/js/2.280aa48e.chunk.js.LICENSE.txt": "/acc-stats-frontend/static/js/2.280aa48e.chunk.js.LICENSE.txt"
+    "main.css": "/racing.aptinstall.de/static/css/main.c4e50b0d.chunk.css",
+    "main.js": "/racing.aptinstall.de/static/js/main.23fe4642.chunk.js",
+    "main.js.map": "/racing.aptinstall.de/static/js/main.23fe4642.chunk.js.map",
+    "runtime-main.js": "/racing.aptinstall.de/static/js/runtime-main.9bd9ba6c.js",
+    "runtime-main.js.map": "/racing.aptinstall.de/static/js/runtime-main.9bd9ba6c.js.map",
+    "static/js/2.280aa48e.chunk.js": "/racing.aptinstall.de/static/js/2.280aa48e.chunk.js",
+    "static/js/2.280aa48e.chunk.js.map": "/racing.aptinstall.de/static/js/2.280aa48e.chunk.js.map",
+    "static/js/3.831f1db6.chunk.js": "/racing.aptinstall.de/static/js/3.831f1db6.chunk.js",
+    "static/js/3.831f1db6.chunk.js.map": "/racing.aptinstall.de/static/js/3.831f1db6.chunk.js.map",
+    "index.html": "/racing.aptinstall.de/index.html",
+    "static/css/main.c4e50b0d.chunk.css.map": "/racing.aptinstall.de/static/css/main.c4e50b0d.chunk.css.map",
+    "static/js/2.280aa48e.chunk.js.LICENSE.txt": "/racing.aptinstall.de/static/js/2.280aa48e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.342ac63e.js",
+    "static/js/runtime-main.9bd9ba6c.js",
     "static/js/2.280aa48e.chunk.js",
     "static/css/main.c4e50b0d.chunk.css",
     "static/js/main.23fe4642.chunk.js"
