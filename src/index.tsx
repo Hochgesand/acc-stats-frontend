@@ -1,12 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+} from "react-router-dom";
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Session from "./sessions/session/Session";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/session/:id" render={(props) => (
+          <Session id={props.match.params.id}/>
+        )} />
+        <Route path="/">
+          <App/>
+        </Route>
+      </Switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

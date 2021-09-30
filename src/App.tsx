@@ -6,11 +6,10 @@ import SessionTable from "./sessions/SessionTable";
 
 
 function App() {
-  const {rowData} = useGetRequest({path: "someIdOderSoKp"});
+  const {getData} = useGetRequest({path: "someIdOderSoKp"});
   return (
-    <div className={"lander"}>
+    <div className={"lander w-full h-full rounded-md px-4 py-4"}>
       <h2>
-        All Sessions
         <SessionTable/>
       </h2>
     </div>
