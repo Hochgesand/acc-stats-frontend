@@ -33,14 +33,20 @@ export default function Session({id}: propId) {
               if (driver.id === lap.driverId && lap.lapTime < driver.bestLapTimeNum){
                 driver.bestLapTimeNum = lap.lapTime;
                 driver.bestLapTime = lap.lapTimeFormatted;
-                if (lap.lapTime < temp.session.bestLapTime){
-                  temp.session.bestLapTimeFormatted = lap.lapTimeFormatted
-                  lap.fastestLap = true;
-                  temp.session.bestDriver = (driver.shortName + driver.firstName + driver.lastName)
-                }
+              }
+              if (lap.lapTime < temp.session.bestLapTime){
+                temp.session.bestLapTimeFormatted = lap.lapTimeFormatted
+                temp.session.bestLapTime = lap.lapTime
+                temp.session.bestDriver = (driver.shortName + driver.firstName + driver.lastName)
               }
             });
           })
+
+          temp.laps?.forEach(lap => {
+            if (lap.lapTime === temp.session.bestLapTime){
+              lap.fastestLap = true;
+            }
+          });
 
           setData(temp);
           setLoading(false)
