@@ -4,12 +4,12 @@ import React, {useEffect, useState} from "react";
 import Error from "../../Error";
 import {BackendEndpointSession} from "../../api/endpoints";
 import Loading from "../../Loading";
-import SessionBigData from "../../interfaces/sessionData/SessionBigData";
-import Driver from "../../interfaces/sessionData/Driver";
-import Car from "../../interfaces/sessionData/Car";
+import SessionBigData from "../../interfaces/SessionBigData";
+import Driver from "../../interfaces/Driver";
+import Car from "../../interfaces/Car";
 import DriverInformation from "./DriverInformation";
 import LapTable from "./LapTable";
-import {Lap} from "../../interfaces/sessionData/Lap";
+import {Lap} from "../../interfaces/Lap";
 
 export interface propId {
   id: string

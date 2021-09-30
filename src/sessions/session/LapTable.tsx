@@ -3,8 +3,8 @@ import useGetRequest from "../../api/useGetRequest";
 import {BackendEndpointSession} from "../../api/endpoints";
 import Loading from "../../Loading";
 import Error from "../../Error";
-import {Lap} from "../../interfaces/sessionData/Lap";
-import SessionBigData from "../../interfaces/sessionData/SessionBigData";
+import {Lap} from "../../interfaces/Lap";
+import SessionBigData from "../../interfaces/SessionBigData";
 import LapEntry from "./LapEntry";
 
 

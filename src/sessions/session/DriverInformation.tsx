@@ -1,4 +1,4 @@
-import Driver from "../../interfaces/sessionData/Driver";
+import Driver from "../../interfaces/Driver";
 
 export default function DriverInformation(driver: Driver) {
   return(
