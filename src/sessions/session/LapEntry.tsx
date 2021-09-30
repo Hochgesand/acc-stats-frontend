@@ -1,4 +1,4 @@
-import {Lap} from "../../interfaces/sessionData/Lap";
+import {Lap} from "../../interfaces/Lap";
 import React from "react";
 
 interface IJaNein {

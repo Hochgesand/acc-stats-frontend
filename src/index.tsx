@@ -9,6 +9,7 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Session from "./sessions/session/Session";
+import DriverStats from "./sessions/stats/driverStats/DriverStats";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,6 +17,9 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/session/:id" render={(props) => (
           <Session id={props.match.params.id}/>
+        )} />
+        <Route exact path="/driver/:id" render={(props) => (
+          <DriverStats id={props.match.params.id}/>
         )} />
         <Route path="/">
           <App/>
