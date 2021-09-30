@@ -15,4 +15,5 @@ export interface Lap {
   split3Formatted: string
   updated_at: string
   driverName: string
+  fastestLap: boolean
 }

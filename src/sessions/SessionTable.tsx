@@ -4,6 +4,7 @@ import SessionRow from "./SessionRow";
 import DriveSession from "../interfaces/DriveSession";
 import {BackendEndpointSessions} from "../api/endpoints";
 import Loading from "../Loading";
+import HighscoreBoard from "./HighscoreBoard";
 
 
 export default function SessionTable() {
@@ -29,16 +30,19 @@ export default function SessionTable() {
 
   return(
     <div className={"grid grid-cols-2"}>
-      <div className={"col-span-1 h-10 card bg-base-300 rounded-box place-items-center"}>
+      <div className={"col-span-1 h-10 card bg-base-300 rounded-box place-items-center mr-2"}>
         <h2 className={"align-middle m-auto"}>All Sessions</h2>
       </div>
-      <div/>
-      <div className="overflow-x-auto mt-2">
-        <table className="table">
+      <div className={"col-span-1 h-10 card bg-base-300 rounded-box place-items-center"}>
+        <h2 className={"align-middle m-auto"}>Track Highscoreboard</h2>
+      </div>
+      <div className="overflow-x-auto mt-2 mr-2">
+        <table className="table w-full">
           <thead>
           <tr>
             <th>ID</th>
             <th>Session</th>
+            <th>Date</th>
             <th/>
           </tr>
           </thead>
@@ -54,10 +58,12 @@ export default function SessionTable() {
                         trackName={item.trackName}
                         updated_at={item.updated_at}
                         bestLapTimeFormatted={item.bestLapTimeFormatted}
-                        bestLapTime={item.bestLapTime}/>)}
+                        bestLapTime={item.bestLapTime}
+                        bestDriver={item.bestDriver}/>)}
           </tbody>
         </table>
       </div>
+      <HighscoreBoard/>
     </div>
   );
 }

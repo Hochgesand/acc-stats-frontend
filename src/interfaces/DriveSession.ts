@@ -10,4 +10,5 @@ export default interface DriveSession {
   updated_at: string
   bestLapTime: number
   bestLapTimeFormatted: string
+  bestDriver: string
 }

@@ -35,6 +35,8 @@ export default function Session({id}: propId) {
                 driver.bestLapTime = lap.lapTimeFormatted;
                 if (lap.lapTime < temp.session.bestLapTime){
                   temp.session.bestLapTimeFormatted = lap.lapTimeFormatted
+                  lap.fastestLap = true;
+                  temp.session.bestDriver = (driver.shortName + driver.firstName + driver.lastName)
                 }
               }
             });
@@ -66,7 +68,7 @@ export default function Session({id}: propId) {
       <div className={"p-5"}>
         <div className="flex flex-row w-full">
           <div className="grid h-auto card bg-base-300 rounded-box place-items-center mb-3 p-2">
-            <SessionInformation created_at={data.session.created_at} id={data.session.id} metaData={data.session.metaData} raceWeekendIndex={data.session.raceWeekendIndex} serverName={data.session.serverName} sessionIndex={data.session.sessionIndex} sessionType={data.session.sessionType} trackName={data.session.trackName} updated_at={data.session.updated_at} bestLapTime={data.session.bestLapTime} bestLapTimeFormatted={data.session.bestLapTimeFormatted}/>
+            <SessionInformation created_at={data.session.created_at} id={data.session.id} metaData={data.session.metaData} raceWeekendIndex={data.session.raceWeekendIndex} serverName={data.session.serverName} sessionIndex={data.session.sessionIndex} sessionType={data.session.sessionType} trackName={data.session.trackName} updated_at={data.session.updated_at} bestLapTime={data.session.bestLapTime} bestLapTimeFormatted={data.session.bestLapTimeFormatted} bestDriver={data.session.bestDriver}/>
           </div>
           <div className="overflow-x-auto mb-3 ml-5 col-span-4 bg-base-300 p-4 rounded-box w-5/12">
             <table className="table-zebra table w-full">

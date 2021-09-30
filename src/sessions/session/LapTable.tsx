@@ -84,6 +84,7 @@ export default function LapTable(sessionBigData: SessionBigData){
             split3Formatted={lap.split3Formatted}
             updated_at={lap.updated_at}
             driverName={lap.driverName}
+            fastestLap={lap.fastestLap}
           />)}
         </tbody>
       </table>
