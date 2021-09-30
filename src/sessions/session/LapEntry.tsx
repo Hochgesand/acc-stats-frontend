@@ -1,6 +1,6 @@
 import {Lap} from "../../interfaces/sessionData/Lap";
 
-interface JaNein {
+interface IJaNein {
   num: number
 }
 
@@ -18,7 +18,7 @@ export default function LapEntry(lap: Lap){
   );
 }
 
-function JaNein(num: JaNein){
+function JaNein(num: IJaNein){
   if (num.num === 1){
     return (
       <td>

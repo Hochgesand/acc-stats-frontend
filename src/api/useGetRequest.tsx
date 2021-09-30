@@ -1,10 +1,3 @@
-import {useState} from "react";
-
-export interface RequestResponse {
-  readonly status: string;
-  readonly json?: string;
-}
-
 interface GetRequestProps {
   readonly path: string;
 }

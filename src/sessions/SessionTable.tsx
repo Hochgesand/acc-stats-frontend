@@ -13,13 +13,13 @@ export default function SessionTable() {
 
   useEffect(() => {
       async function fetchData() {
-        const request = await getData().then(function (json){
+        await getData().then(function (json){
           setData(json);
           setLoading(false)
         });
       }
       fetchData();
-    }, []);
+    });
 
   if (loading){
     return (

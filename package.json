@@ -1,5 +1,6 @@
 {
   "name": "acc-frontend",
+  "homepage": "https://racing.aptinstall.de/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

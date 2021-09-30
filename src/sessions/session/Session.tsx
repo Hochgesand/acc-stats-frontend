@@ -23,14 +23,14 @@ export default function Session({id}: propId) {
 
   useEffect(() => {
       async function fetchData() {
-        const request = await getData().then(function (json){
+        await getData().then(function (json){
           let temp: SessionBigData = json;
 
           temp.drivers?.forEach(driver => {
             driver.bestLapTimeNum = Number.MAX_VALUE
             temp.session.bestLapTime = Number.MAX_VALUE
             temp.laps?.forEach(lap => {
-              if (driver.id == lap.driverId && lap.lapTime < driver.bestLapTimeNum){
+              if (driver.id === lap.driverId && lap.lapTime < driver.bestLapTimeNum){
                 driver.bestLapTimeNum = lap.lapTime;
                 driver.bestLapTime = lap.lapTimeFormatted;
                 if (lap.lapTime < temp.session.bestLapTime){
@@ -49,7 +49,7 @@ export default function Session({id}: propId) {
         );
       }
       fetchData();
-    }, []);
+    });
 
   if (loading){
     return <Loading/>

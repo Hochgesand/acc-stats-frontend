@@ -22,9 +22,8 @@ export default function LapTable(sessionBigData: SessionBigData){
         let laps: Lap[] = [];
         laps = json
         laps.forEach(lap =>{
-          let driverName: string;
           sessionBigData.drivers?.forEach(driver => {
-            if (driver.id == lap.driverId){
+            if (driver.id === lap.driverId){
               lap.driverName = driver.shortName;
             }
           });
@@ -40,7 +39,7 @@ export default function LapTable(sessionBigData: SessionBigData){
     }
 
     fetchData();
-  }, []);
+  });
 
 
 
