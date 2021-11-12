@@ -1,7 +1,7 @@
 import Loading from "../../../Loading";
 import Error from "../../../Error";
-import React, {useEffect, useRef, useState} from "react";
-import {Chart, Doughnut} from 'react-chartjs-2';
+import React, {useEffect, useState} from "react";
+import {Doughnut} from 'react-chartjs-2';
 import useGetRequest from "../../../api/useGetRequest";
 import {baseUrl} from "../../../api/endpoints";
 import {OverallStats} from "../../../interfaces/OverallStats";
@@ -66,20 +66,21 @@ export default function GeneralServerStats() {
   }
 
   return (
-    <>
-      <div className={"relative h-auto text-white mb-3 col-span-4 bg-base-300 p-4 rounded-box w-4/12"}>
+    <div className={"w-100 grid grid-rows-1 grid-cols-2 gap-4"}>
+      <div className={"h-auto text-white mb-3 bg-base-300 p-4 rounded-box w-full"}>
         <Doughnut data={piechartConfig} options={{responsive: true, color: "red"}}/>
+        
       </div>
-      <div className={"relative h-auto text-white mb-3 col-span-4 bg-base-300 p-4 rounded-box w-4/12"}>
+      <div className={"h-1/12 text-white mb-3 bg-base-300 p-4 rounded-box w-full"}>
         <p className={"text-3xl"}>All Drivers</p>
         {drivers.map(x =>
           <div className={"flex flex-row"}>
             <p>{x.shortName} {x.firstName} {x.lastName}</p>
-            <a href={"/driver/" + x.id}><button className={"btn"}>Go To Session</button></a>
+            <a href={"/driver/" + x.id}><button className={"btn"}>Go To Driver</button></a>
           </div>
         )}
       </div>
-    </>
+    </div>
 
   )
 }

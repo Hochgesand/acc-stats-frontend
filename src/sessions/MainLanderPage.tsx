@@ -19,8 +19,8 @@ export default function MainLanderPage() {
       <div className={"grid grid-cols-2"}>
         <AllSessionsTable/>
         <HighscoreBoard/>
-        <GeneralServerStats/>
       </div>
+      <GeneralServerStats/>
     </div>
   );
 }

@@ -13,6 +13,7 @@ export interface propId {
 export default function DriverStats({id}: propId){
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("")
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [driver, setDriver] = useState({} as Driver)
   const [times, setTimes] = useState([] as Besttimes[])
   const driverRequest = useGetRequest({path: `${baseUrl}/driver/${id}`});
