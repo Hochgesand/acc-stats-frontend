@@ -1,5 +1,6 @@
 import UseAPI from "../../../api/UseAPI";
 import Loading from "../../../Loading";
+import React from "react";
 
 interface props {
   id: number

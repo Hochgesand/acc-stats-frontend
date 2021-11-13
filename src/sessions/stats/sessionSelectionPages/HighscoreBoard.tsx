@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import useGetRequest from "../api/useGetRequest";
-import Loading from "../Loading";
-import TrackTimes from "../interfaces/TrackTimes";
-import Driver from "../interfaces/Driver";
+import useGetRequest from "../../../api/useGetRequest";
+import Loading from "../../../Loading";
+import TrackTimes from "../../../interfaces/TrackTimes";
+import Driver from "../../../interfaces/Driver";
 
 export default function HighscoreBoard(){
   const [data, setData] = useState([] as TrackTimes[]);

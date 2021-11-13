@@ -16,7 +16,7 @@ export default function SessionInformation(driveSession: DriveSession) {
         {driveSession.serverName}
       </div>
       <div className="h-auto card w-11/12 bg-base-200 rounded-box place-items-center m-2 p-2">
-        Best Laptime overall: {driveSession.bestLapTimeFormatted} | {driveSession.bestDriver.substr(0,3)}
+        Best Laptime overall: {driveSession.bestLapTimeFormatted} | {driveSession.bestDriver}
       </div>
     </div>
   );

@@ -28,18 +28,19 @@ export default function Session({id}: propId) {
     async function compileData() {
       const temp: SessionBigData = useAPI.data[0]
       if (!useAPI.isLoading) {
+        temp.session.bestLapTime = Number.MAX_VALUE
         temp.drivers?.forEach(driver => {
           driver.bestLapTimeNum = Number.MAX_VALUE
-          temp.session.bestLapTime = Number.MAX_VALUE
           temp.laps?.forEach(lap => {
             if (driver.id === lap.driverId && lap.lapTime < driver.bestLapTimeNum) {
               driver.bestLapTimeNum = lap.lapTime;
               driver.bestLapTime = lap.lapTimeFormatted;
-            }
-            if (lap.lapTime < temp.session.bestLapTime) {
-              temp.session.bestLapTimeFormatted = lap.lapTimeFormatted
-              temp.session.bestLapTime = lap.lapTime
-              temp.session.bestDriver = (driver.shortName + driver.firstName + driver.lastName)
+
+              if (lap.lapTime < temp.session.bestLapTime) {
+                temp.session.bestLapTimeFormatted = lap.lapTimeFormatted
+                temp.session.bestLapTime = lap.lapTime
+                temp.session.bestDriver = (driver.shortName + " " + driver.firstName + " " + driver.lastName)
+              }
             }
           });
         })
@@ -80,7 +81,7 @@ export default function Session({id}: propId) {
                                 bestLapTimeFormatted={data.session.bestLapTimeFormatted}
                                 bestDriver={data.session.bestDriver}/>
           </div>
-          <div className="overflow-x-auto mb-3 ml-5 col-span-4 bg-base-300 p-4 rounded-box w-5/12">
+          <div className="overflow-x-auto mb-3 ml-5 col-span-4 bg-base-300 p-4 rounded-box w-full">
             <table className="table-zebra table w-full">
               <thead>
               <tr>

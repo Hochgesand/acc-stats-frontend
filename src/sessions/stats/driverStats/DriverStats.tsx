@@ -2,7 +2,7 @@ import React from "react";
 import Loading from "../../../Loading";
 import Error from "../../../Error";
 import UseAPI from "../../../api/UseAPI";
-import CarNameById from "./CarNameById";
+import CarNameById from "../Cars/CarNameById";
 
 export interface propId {
   id: string

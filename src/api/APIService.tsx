@@ -4,6 +4,8 @@ import SessionBigData from "../interfaces/SessionBigData";
 import {CarModel} from "../interfaces/CarModel";
 import Car from "../interfaces/Car";
 import {Besttimes} from "../interfaces/Besttimes";
+import {OverallStats} from "../interfaces/OverallStats";
+import Driver from "../interfaces/Driver";
 
 async function getRequest(path: string) {
   return fetch(path, {
@@ -34,7 +36,6 @@ const APIService = {
 
   getTimesOfDriverById: async(id: number) => {
     const response: Besttimes[] = await getRequest(`${baseUrl}/driver/${id}/times`)
-    console.log(response)
     return response
   },
 
@@ -51,6 +52,23 @@ const APIService = {
   getSpecificCarByCarId: async(id: number) => {
     const response: Car[] = [];
     response.push(await getRequest(`${baseUrl}/car/${id}`))
+    return response
+  },
+
+  getSpecificCarModelByCarId: async(id: number) => {
+    const response: CarModel[] = [];
+    response.push(await getRequest(`${baseUrl}/car/model/${id}`))
+    return response
+  },
+
+  getGenericServerStats: async() => {
+    const response: OverallStats[] = [];
+    response.push(await getRequest(`${baseUrl}/stats`))
+    return response
+  },
+
+  getAllDrivers: async() => {
+    const response: Driver[] = await getRequest(`${baseUrl}/drivers`)
     return response
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
-import DriveSession from "../interfaces/DriveSession";
-import Loading from "../Loading";
-import UseAPI from "../api/UseAPI";
+import DriveSession from "../../../interfaces/DriveSession";
+import Loading from "../../../Loading";
+import UseAPI from "../../../api/UseAPI";
 
 export default function AllSessionsTable() {
   const useAPI = UseAPI('getSessions')
