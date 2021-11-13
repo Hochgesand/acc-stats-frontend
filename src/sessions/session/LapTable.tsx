@@ -78,8 +78,8 @@ export default function LapTable({sessionBigData, bestLapTime}: props){
   }
 
   return (
-    <div className={"overflow-x-auto mt-5 col-span-4 bg-base-300 p-4 rounded-box w-full"}>
-      <table className={"table w-full"}>
+    <div className={"mt-5 col-span-4 bg-base-300 p-4 rounded-box w-full"}>
+      <table className={"table w-full table-auto"}>
         <thead>
         <tr>
           <th>id</th>

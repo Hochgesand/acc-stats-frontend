@@ -16,13 +16,13 @@ export interface props {
 
 export default function LapEntry({lap, bestLapTime, bestSplit2, bestSplit3, bestSplit1}:props){
   return(
-    <tr className={`${bestLapTime === lap.lapTimeFormatted ? "text-green-500" : ""}`}>
+    <tr className={`${bestLapTime === lap.lapTimeFormatted ? "bg-blue-800" : ""}`}>
       <td>{lap.id}</td>
       <td>{lap.driverName}</td>
-      <td>{lap.lapTimeFormatted}</td>
-      <td className={`${bestSplit1 === lap.split1Formatted ? "text-indigo-400" : ""}`}>{lap.split1Formatted}</td>
-      <td className={`${bestSplit2 === lap.split2Formatted ? "text-indigo-400" : ""}`}>{lap.split2Formatted}</td>
-      <td className={`${bestSplit3 === lap.split3Formatted ? "text-indigo-400" : ""}`}>{lap.split3Formatted}</td>
+      <td><button className={`${bestLapTime === lap.lapTimeFormatted ? "bg-green-600 btn" : ""}`}>{lap.lapTimeFormatted}</button></td>
+      <td><button className={`${bestSplit1 === lap.split1Formatted ? "bg-purple-600 btn" : ""}`}>{lap.split1Formatted}</button></td>
+      <td><button className={`${bestSplit2 === lap.split2Formatted ? "bg-purple-600 btn" : ""}`}>{lap.split2Formatted}</button></td>
+      <td><button className={`${bestSplit3 === lap.split3Formatted ? "bg-purple-600 btn" : ""}`}>{lap.split3Formatted}</button></td>
       <td><CarNameById id={lap.carId}/></td>
       <JaNein num={lap.isValidForBest}/>
     </tr>

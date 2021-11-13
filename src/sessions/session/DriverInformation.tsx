@@ -14,11 +14,11 @@ export default function DriverInformation({driver, bestLapTime, sessionBigData}:
   if (carUsed === undefined)
     carUsed = 0
   return (
-    <tr className={`${bestLapTime === driver.bestLapTime ? "text-green-500" : ""}`}>
+    <tr>
       <td>{driver.firstName}</td>
       <td className={"content-end"}>{driver.lastName}</td>
       <td>{driver.shortName}</td>
-      <td>{driver.bestLapTime}</td>
+      <td><button className={`${bestLapTime === driver.bestLapTime ? "btn bg-green-500" : ""}`}>{driver.bestLapTime}</button></td>
       <td><CarNameById id={carUsed}/></td>
       <td><a href={"/driver/" + driver.id}>
         <button className={"btn"}>Go To Driver</button>
