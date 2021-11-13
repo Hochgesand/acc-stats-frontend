@@ -89,12 +89,13 @@ export default function Session({id}: propId) {
                 <th>Name</th>
                 <th>Shortname</th>
                 <th>Best lap time</th>
-                <th></th>
+                <th>Car</th>
+                <th/>
               </tr>
               </thead>
               <tbody>
               {data.drivers.map(x =>
-                <DriverInformation driver={x} bestLapTime={data.session.bestLapTimeFormatted}/>
+                <DriverInformation driver={x} bestLapTime={data.session.bestLapTimeFormatted} sessionBigData={data}/>
               )}
               </tbody>
             </table>

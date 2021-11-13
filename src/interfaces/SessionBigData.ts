@@ -4,8 +4,8 @@ import DriveSession from "./DriveSession";
 import {Lap} from "./Lap";
 
 export default interface SessionBigData{
-  cars?: Car[],
+  cars: Car[],
   drivers?: Driver[],
-  laps?: Lap[],
+  laps: Lap[],
   session: DriveSession
 }
