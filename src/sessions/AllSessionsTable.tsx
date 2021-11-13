@@ -1,25 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import DriveSession from "../interfaces/DriveSession";
-import useGetRequest from "../api/useGetRequest";
-import {BackendEndpointSessions} from "../api/endpoints";
 import Loading from "../Loading";
+import UseAPI from "../api/UseAPI";
 
 export default function AllSessionsTable() {
-  const [data, setData] = useState([{} as DriveSession]);
-  const [loading, setLoading] = useState(true);
-  const {getData} = useGetRequest({path: `${BackendEndpointSessions}`});
+  const useAPI = UseAPI('getSessions')
 
-  useEffect(() => {
-    async function fetchData() {
-      await getData().then(function (json){
-        setData(json);
-        setLoading(false)
-      });
-    }
-    fetchData();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  if (loading){
+  if (useAPI.isLoading){
     return (
       <Loading/>
     );
@@ -41,7 +28,7 @@ export default function AllSessionsTable() {
           </tr>
           </thead>
           <tbody >
-          {data.map(item =>
+          {useAPI.data.map(item =>
             <SessionRow created_at={item.created_at}
                         id={item.id}
                         metaData={item.metaData}

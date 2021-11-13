@@ -69,7 +69,7 @@ export default function GeneralServerStats() {
     <div className={"w-100 grid grid-rows-1 grid-cols-2 gap-4"}>
       <div className={"h-auto text-white mb-3 bg-base-300 p-4 rounded-box w-full"}>
         <Doughnut data={piechartConfig} options={{responsive: true, color: "red"}}/>
-        
+
       </div>
       <div className={"h-1/12 text-white mb-3 bg-base-300 p-4 rounded-box w-full"}>
         <p className={"text-3xl"}>All Drivers</p>

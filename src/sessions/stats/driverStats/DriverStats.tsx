@@ -3,8 +3,8 @@ import Loading from "../../../Loading";
 import Error from "../../../Error";
 import useGetRequest from "../../../api/useGetRequest";
 import {baseUrl} from "../../../api/endpoints";
-import Driver from "../../../interfaces/Driver";
 import {Besttimes} from "../../../interfaces/Besttimes";
+import {CarModel} from "../../../interfaces/CarModel";
 
 export interface propId {
   id: string
@@ -13,23 +13,12 @@ export interface propId {
 export default function DriverStats({id}: propId){
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("")
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [driver, setDriver] = useState({} as Driver)
   const [times, setTimes] = useState([] as Besttimes[])
-  const driverRequest = useGetRequest({path: `${baseUrl}/driver/${id}`});
+  const [carmodels, setCarmodels] = useState([] as CarModel[])
+  const getCarmodels = useGetRequest({path: `${baseUrl}/car/models`});
   const driverTimes = useGetRequest({path: `${baseUrl}/driver/${id}/times`});
 
   useEffect(() => {
-    async function getDriverInfo() {
-      await driverRequest.getData().then(function (json){
-        setDriver(json)
-        setLoading(false)
-      }).catch( err =>{
-          setError(error + err.message)
-          setLoading(false);
-        }
-      );
-    }
     async function getDriverData() {
       await driverTimes.getData().then(function (json){
         setTimes(json)
@@ -40,8 +29,27 @@ export default function DriverStats({id}: propId){
         }
       );
     }
+
+    async function fetchCarModels() {
+      await getCarmodels.getData().then(function (json){
+        let convertedCarmodels: CarModel[] = []
+        const listItems = Object.entries(json)
+        // eslint-disable-next-line array-callback-return
+        listItems.map(([key, value]: any) => {
+          convertedCarmodels.push({id: key, name: value})
+        })
+
+        setCarmodels(convertedCarmodels)
+        setLoading(false)
+      }).catch( err =>{
+          setError(err.message)
+          setLoading(false);
+        }
+      );
+    }
+
+    fetchCarModels()
     getDriverData();
-    getDriverInfo();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (loading){
@@ -61,6 +69,7 @@ export default function DriverStats({id}: propId){
           <div className={""}>
             <p>{x.trackName}</p>
             <p>{x.bestLapTimeFormatted}</p>
+            <p>{carmodels.find(y => y.id = x.bestTimeLapId)?.name}</p>
           </div>
         )}
       </div>

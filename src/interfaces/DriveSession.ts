@@ -11,4 +11,5 @@ export default interface DriveSession {
   bestLapTime: number
   bestLapTimeFormatted: string
   bestDriver: string
+
 }
