@@ -2,6 +2,7 @@ export default interface Car {
   carGuid: number,
   carId: number,
   carModel: number
+  carName: string
   created_at: string,
   cupCategory: number,
   driverId: number,

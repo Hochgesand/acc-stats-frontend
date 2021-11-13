@@ -12,8 +12,8 @@ export default function UseAPI(method: string, ...params: any[]){
     try {
       setIsLoading(true);
       // @ts-ignore
-      setData(await APIService[method](...params));
-      console.log(data)
+      const temp: any = await APIService[method](...params)
+      setData(temp);
     } catch (e: any) {
       setError(e.message);
     } finally {
