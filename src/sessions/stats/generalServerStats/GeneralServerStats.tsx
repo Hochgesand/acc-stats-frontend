@@ -53,7 +53,7 @@ export default function GeneralServerStats() {
   }
 
   return (
-    <div className={"w-100 grid grid-rows-1 gap-4 "}>
+    <div className={"max-w-5xl grid grid-rows-1 gap-4 "}>
       <div className={"h-auto text-white mb-3 bg-base-300 p-4 rounded-box w-full"}>
         <p className={"text-2xl"}>Some general useless information about our servers</p>
         <div className={"divider"}/>

@@ -5,7 +5,7 @@ import GeneralServerStats from "./stats/generalServerStats/GeneralServerStats";
 export default function MainLanderPage() {
   return (
     <div>
-      <div className={"flex flex-row"}>
+      <div className={"flex flex-col md:flex-row"}>
         <GeneralServerStats/>
         <div className={"flex flex-col ml-4"}>
           <a href={"/sessions"}><button className={"btn h-auto"}>Show all Sessions and Sessionscoreboard</button></a>
