@@ -70,9 +70,9 @@ export default function Session({id}: propId) {
 
   if (data.session != null && data.drivers != null && data.drivers.length > 0) {
     return (
-      <div className={"p-5"}>
+      <div>
         <div className="flex flex-row w-full">
-          <div className="grid h-auto card bg-base-300 rounded-box place-items-center mb-3 p-2">
+          <div className="grid h-auto card bg-base-300 rounded-box place-items-center mb-3">
             <SessionInformation created_at={data.session.created_at} id={data.session.id}
                                 metaData={data.session.metaData} raceWeekendIndex={data.session.raceWeekendIndex}
                                 serverName={data.session.serverName} sessionIndex={data.session.sessionIndex}

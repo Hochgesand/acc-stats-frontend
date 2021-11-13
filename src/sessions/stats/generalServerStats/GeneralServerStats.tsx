@@ -59,15 +59,15 @@ export default function GeneralServerStats() {
         <p className={"mt-4 text-2xl"}>Accumulated wasted time on all servers</p>
         <p>{useApiStats.data[0].totalTimeWastedFormatted}</p>
         <p className={"mt-4 text-2xl"}>Session with most laps driven</p>
-        <p>{useApiStats.data[0].mostLapsDrivenInASession}</p>
+        <p>{useApiStats.data[0].mostLapsDrivenInASession}
         <a href={"/session/" + useApiStats.data[0].mostLapsDriveInASessionId}>
-          <button className={"btn"}>Go To Session</button>
-        </a>
+          <button className={"ml-2 btn btn-sm"}>Go To Session</button>
+        </a></p>
         <p className={"mt-4 text-2xl"}>Unique player counter</p>
         <p>{useApiStats.data[0].totalUniquePlayerCount}</p>
         <p className={"mt-4 text-2xl"}>Most popular car and driven laps</p>
         <p><CarModelNameById id={useApiStats.data[0].carModelIdWithMostLaps}/></p>
-        <p>{useApiStats.data[0].carModelWithMostLapsLapCount}</p>
+        <p>Total laps: {useApiStats.data[0].carModelWithMostLapsLapCount}</p>
       </div>
     </div>
   )
