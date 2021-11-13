@@ -6,6 +6,7 @@ import Car from "../interfaces/Car";
 import {Besttimes} from "../interfaces/Besttimes";
 import {OverallStats} from "../interfaces/OverallStats";
 import Driver from "../interfaces/Driver";
+import {Player} from "../interfaces/Player";
 
 async function getRequest(path: string) {
   return fetch(path, {
@@ -58,6 +59,12 @@ const APIService = {
   getSpecificCarModelByCarId: async(id: number) => {
     const response: CarModel[] = [];
     response.push(await getRequest(`${baseUrl}/car/model/${id}`))
+    return response
+  },
+
+  getPlayerById: async(id: number) => {
+    const response: Player[] = [];
+    response.push(await getRequest(`${baseUrl}/driver/${id}`))
     return response
   },
 

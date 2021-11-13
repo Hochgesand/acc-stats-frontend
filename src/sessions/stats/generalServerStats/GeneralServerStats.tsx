@@ -55,16 +55,21 @@ export default function GeneralServerStats() {
   return (
     <div className={"w-100 grid grid-rows-1 gap-4 "}>
       <div className={"h-auto text-white mb-3 bg-base-300 p-4 rounded-box w-full"}>
+        <p className={"text-2xl"}>Some general useless information about our servers</p>
+        <div className={"divider"}/>
         <Doughnut data={piechartConfig} options={{responsive: true, color: "red"}}/>
         <p className={"mt-4 text-2xl"}>Accumulated wasted time on all servers</p>
         <p>{useApiStats.data[0].totalTimeWastedFormatted}</p>
+        <div className={"divider"}/>
         <p className={"mt-4 text-2xl"}>Session with most laps driven</p>
         <p>{useApiStats.data[0].mostLapsDrivenInASession}
         <a href={"/session/" + useApiStats.data[0].mostLapsDriveInASessionId}>
           <button className={"ml-2 btn btn-sm"}>Go To Session</button>
         </a></p>
+        <div className={"divider"}/>
         <p className={"mt-4 text-2xl"}>Unique player counter</p>
         <p>{useApiStats.data[0].totalUniquePlayerCount}</p>
+        <div className={"divider"}/>
         <p className={"mt-4 text-2xl"}>Most popular car and driven laps</p>
         <p><CarModelNameById id={useApiStats.data[0].carModelIdWithMostLaps}/></p>
         <p>Total laps: {useApiStats.data[0].carModelWithMostLapsLapCount}</p>

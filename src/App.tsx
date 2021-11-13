@@ -11,9 +11,9 @@ import AllDriver from "./sessions/stats/driverStats/AllDriver";
 
 function App() {
   return (
-    <div className={"lander w-full h-full rounded-md m-4"}>
+    <div className={"h-full rounded-md m-4"}>
       <div className={"flex flex-row"}>
-        <div className="alert mb-4 mr-4">
+        <div className="alert mb-4">
           <div className="flex-1">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#2196f3"
                  className="w-6 h-6 mx-2">
