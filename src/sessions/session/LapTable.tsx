@@ -50,8 +50,8 @@ export default function LapTable(sessionBigData: SessionBigData){
   }
 
   return (
-    <div className={"overflow-x-auto mt-5 col-span-4 bg-base-300 p-4 rounded-box w-6/12"}>
-      <table className={"table"}>
+    <div className={"overflow-x-auto mt-5 col-span-4 bg-base-300 p-4 rounded-box w-full"}>
+      <table className={"table w-full"}>
         <thead>
         <tr>
           <th>id</th>
