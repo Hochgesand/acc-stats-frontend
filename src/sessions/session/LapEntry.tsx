@@ -5,9 +5,14 @@ interface IJaNein {
   num: number
 }
 
-export default function LapEntry(lap: Lap){
+export interface props {
+  lap: Lap
+  bestLapTime: string
+}
+
+export default function LapEntry({lap, bestLapTime}:props){
   return(
-    <tr>
+    <tr className={`${bestLapTime === lap.lapTimeFormatted ? "text-green-500" : ""}`}>
       <td>{lap.id}</td>
       <td>{lap.driverName}</td>
       <td>{lap.lapTimeFormatted}</td>

@@ -94,16 +94,14 @@ export default function Session({id}: propId) {
               </thead>
               <tbody>
               {data.drivers.map(x =>
-                <DriverInformation created_at={x.created_at} firstName={x.firstName} id={x.id} lastName={x.lastName}
-                                   playerId={x.playerId} shortName={x.shortName} updated_at={x.updated_at}
-                                   bestLapTime={x.bestLapTime} bestLapTimeNum={x.bestLapTimeNum}/>
+                <DriverInformation driver={x} bestLapTime={data.session.bestLapTimeFormatted}/>
               )}
               </tbody>
             </table>
           </div>
         </div>
 
-        <LapTable session={data.session} cars={data.cars} drivers={data.drivers}/>
+        <LapTable bestLapTime={data.session.bestLapTimeFormatted} sessionBigData={data}/>
       </div>
     );
   }

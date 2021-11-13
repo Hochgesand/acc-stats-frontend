@@ -1,9 +1,14 @@
 import Driver from "../../interfaces/Driver";
 import React from "react";
 
-export default function DriverInformation(driver: Driver) {
+export interface props{
+  driver: Driver
+  bestLapTime: string
+}
+
+export default function DriverInformation({driver, bestLapTime}: props) {
   return(
-    <tr>
+    <tr className={`${bestLapTime === driver.bestLapTime ? "text-green-500" : ""}`}>
       <td>{driver.firstName}</td>
       <td className={"content-end"}>{driver.lastName}</td>
       <td>{driver.shortName}</td>

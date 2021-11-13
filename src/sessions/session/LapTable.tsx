@@ -7,8 +7,12 @@ import {Lap} from "../../interfaces/Lap";
 import SessionBigData from "../../interfaces/SessionBigData";
 import LapEntry from "./LapEntry";
 
+export interface props {
+  sessionBigData: SessionBigData
+  bestLapTime: string
+}
 
-export default function LapTable(sessionBigData: SessionBigData){
+export default function LapTable({sessionBigData, bestLapTime}: props){
   const [lapData, setLapData] = useState([] as Lap[]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("")
@@ -66,23 +70,8 @@ export default function LapTable(sessionBigData: SessionBigData){
         <tbody>
         {lapData.map(lap =>
           <LapEntry
-            carId={lap.carId}
-            created_at={lap.created_at}
-            driverId={lap.driverId}
-            id={lap.id}
-            isValidForBest={lap.isValidForBest}
-            lapTime={lap.lapTime}
-            lapTimeFormatted={lap.lapTimeFormatted}
-            sessionId={lap.sessionId}
-            split1={lap.split1}
-            split1Formatted={lap.split1Formatted}
-            split2={lap.split2}
-            split2Formatted={lap.split2Formatted}
-            split3={lap.split3}
-            split3Formatted={lap.split3Formatted}
-            updated_at={lap.updated_at}
-            driverName={lap.driverName}
-            fastestLap={lap.fastestLap}
+            lap={lap}
+            bestLapTime={bestLapTime}
           />)}
         </tbody>
       </table>
