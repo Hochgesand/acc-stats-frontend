@@ -71,7 +71,7 @@ export default function Session({id}: propId) {
   if (data.session != null && data.drivers != null && data.drivers.length > 0) {
     return (
       <div>
-        <div className="flex flex-row w-full">
+        <div className="flex flex-col md:flex-row w-full">
           <div className="grid h-auto card bg-base-300 rounded-box place-items-center mb-3">
             <SessionInformation created_at={data.session.created_at} id={data.session.id}
                                 metaData={data.session.metaData} raceWeekendIndex={data.session.raceWeekendIndex}
@@ -81,7 +81,7 @@ export default function Session({id}: propId) {
                                 bestLapTimeFormatted={data.session.bestLapTimeFormatted}
                                 bestDriver={data.session.bestDriver}/>
           </div>
-          <div className="overflow-x-auto mb-3 ml-5 col-span-4 bg-base-300 p-4 rounded-box w-full">
+          <div className="overflow-x-auto mb-3 md:ml-5 col-span-4 bg-base-300 p-4 rounded-box w-full">
             <table className="table-zebra table w-full">
               <thead>
               <tr>
