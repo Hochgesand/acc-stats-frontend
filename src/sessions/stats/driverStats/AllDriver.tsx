@@ -6,6 +6,7 @@ import debounce from 'lodash.debounce';
 
 export default function AllDriver() {
   const api = UseAPI('getAllDrivers')
+  const [searchedDriverRoot, setSearchedDriverRoot] = useState([] as Driver[])
   const [searchedDriver, setSearchedDriver] = useState([] as Driver[])
   const searchfield = useRef(null)
 
@@ -13,14 +14,14 @@ export default function AllDriver() {
   const debouncedSave = useCallback(
     debounce((e: string) => {
       if (e.length === 0) {
-        setSearchedDriver(api.data)
+        setSearchedDriver(searchedDriverRoot)
         return
       }
 
       const searchDriver: Driver[] = []
-
+      console.log(2)
       // eslint-disable-next-line array-callback-return
-      api.data.find(x => {
+      searchedDriverRoot.find(x => {
         let name: string = (x.firstName + x.lastName + x.shortName).toLowerCase()
         if (name.includes(e.toLowerCase()))
           searchDriver.push(x)
@@ -28,10 +29,13 @@ export default function AllDriver() {
 
       setSearchedDriver(searchDriver)
     }, 1000),
-    [], // will be created only once initially
+    [searchedDriver, searchedDriverRoot], // will be created only once initially
   );
 
-  useEffect(() => setSearchedDriver(api.data), [api.isLoading])// eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    setSearchedDriver(api.data)
+    setSearchedDriverRoot(searchedDriver)
+  }, [api.isLoading])// eslint-disable-line react-hooks/exhaustive-deps
 
   if (api.isLoading)
     return (
@@ -40,8 +44,8 @@ export default function AllDriver() {
 
   return (
     <div className={"h-1/12 text-white mb-3 bg-base-300 p-4 rounded-box w-full"}>
-      <p className={"text-3xl"}>All driver search</p>
-      <input ref={searchfield} onChange={e => debouncedSave(e.target.value)}
+      <p className={"text-3xl"}>All driver search (use STRG + F, search is broken.)</p>
+      <input disabled={true} ref={searchfield} onChange={e => debouncedSave(e.target.value)}
              className={"appearance-none w-full bg-base-200 border border-white rounded py-4 px-4 leading-tight focus:outline-none focus:bg-base-400"}/>
       <div className={"divider"}/>
       {searchedDriver.map(x =>
