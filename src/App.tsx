@@ -21,7 +21,7 @@ function App() {
         </div>
         <div className={"mb-3 w-1/4 mr-4"}>
           <a href={"/sessions"}>
-            <div className={"h-full w-full hover:bg-base-200 rounded-box flex items-center justify-center"}>
+            <div className={"h-full w-full"}>
               <button className={"btn w-full h-full"}>Sessions</button>
             </div>
           </a>
@@ -33,7 +33,7 @@ function App() {
         </div>
         <div className={"mb-3 w-1/4"}>
           <a href={"/drivers"}>
-            <div className={"h-full w-full hover:bg-base-200 rounded-box flex items-center justify-center"}>
+            <div className={"h-full w-full"}>
               <button className={"btn w-full h-full"}>Driver</button>
             </div>
           </a>
