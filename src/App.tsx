@@ -13,17 +13,26 @@ function App() {
   return (
     <div className={"h-full rounded-md m-4"}>
       <div className={"flex flex-row"}>
-        <div className="alert mb-4">
-          <div className="flex-1">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#2196f3"
-                 className="w-6 h-6 mx-2">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <label>This website is sill under development. Errors may occur and some features could appear to be
-              missing.
-              This is indeed in a pre-alpha state. But anyway, visit our Teamspeak @ ts.germandeathsystem.de</label>
-          </div>
+        <div className={"h-16 text-white mb-3 bg-base-300 rounded-box w-1/3 mr-4"}>
+          <a href={"/"}>
+            <div className={"h-full w-full hover:bg-base-200 rounded-box flex items-center justify-center"}>
+              <span className={"text-2xl"}>Home</span>
+            </div>
+          </a>
+        </div>
+        <div className={"h-16 text-white mb-3 bg-base-300 rounded-box w-1/3 mr-4"}>
+          <a href={"/sessions"}>
+            <div className={"h-full w-full hover:bg-base-200 rounded-box flex items-center justify-center"}>
+              <span className={"text-2xl"}>Sessions</span>
+            </div>
+          </a>
+        </div>
+        <div className={"h-16 text-white mb-3 bg-base-300 rounded-box w-1/3 mr-4"}>
+          <a href={"/drivers"}>
+            <div className={"h-full w-full hover:bg-base-200 rounded-box flex items-center justify-center"}>
+              <span className={"text-2xl"}>Driver</span>
+            </div>
+          </a>
         </div>
       </div>
       <BrowserRouter>
