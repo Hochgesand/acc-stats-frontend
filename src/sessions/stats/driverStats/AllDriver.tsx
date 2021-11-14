@@ -11,8 +11,8 @@ export default function AllDriver() {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const debouncedSave = useCallback(
-    debounce(nextValue => {
-      if (nextValue.length === 0) {
+    debounce((e: string) => {
+      if (e.length === 0) {
         setSearchedDriver(api.data)
         return
       }
@@ -22,7 +22,7 @@ export default function AllDriver() {
       // eslint-disable-next-line array-callback-return
       api.data.find(x => {
         let name: string = (x.firstName + x.lastName + x.shortName).toLowerCase()
-        if (name.includes(nextValue.toLowerCase()))
+        if (name.includes(e.toLowerCase()))
           searchDriver.push(x)
       })
 

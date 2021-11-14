@@ -17,7 +17,6 @@ export interface props {
 export default function LapEntry({lap, bestLapTime, bestSplit2, bestSplit3, bestSplit1}:props){
   return(
     <tr className={`${bestLapTime === lap.lapTimeFormatted ? "bg-blue-800" : ""}`}>
-      <td>{lap.id}</td>
       <td>{lap.driverName}</td>
       <td><button className={`${bestLapTime === lap.lapTimeFormatted ? "bg-green-600 btn" : ""}`}>{lap.lapTimeFormatted}</button></td>
       <td><button className={`${bestSplit1 === lap.split1Formatted ? "bg-purple-600 btn" : ""}`}>{lap.split1Formatted}</button></td>

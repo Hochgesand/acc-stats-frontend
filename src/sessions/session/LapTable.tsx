@@ -36,7 +36,7 @@ export default function LapTable({sessionBigData, bestLapTime}: props){
         laps.forEach(lap =>{
           sessionBigData.drivers?.forEach(driver => {
             if (driver.id === lap.driverId){
-              lap.driverName = driver.shortName;
+              lap.driverName = driver.shortName + " " + driver.firstName + " " + driver.lastName;
               if (nsp1 > lap.split1){
                 nsp1 = lap.split1
                 sp1 = lap.split1Formatted
@@ -82,7 +82,6 @@ export default function LapTable({sessionBigData, bestLapTime}: props){
       <table className={"table w-full table-auto"}>
         <thead>
         <tr>
-          <th>id</th>
           <th>Name</th>
           <th>Laptime</th>
           <th>Split 1</th>
