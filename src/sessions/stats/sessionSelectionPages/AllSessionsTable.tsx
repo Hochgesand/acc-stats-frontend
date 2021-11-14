@@ -18,7 +18,7 @@ export default function AllSessionsTable() {
         <h1 className={"align-middle m-auto"}>All sessions</h1>
       </div>
       <div className="overflow-x-auto mt-2 mr-2">
-        <table className="table w-full">
+        <table className="table w-full table-zebra">
           <thead>
           <tr>
             <th/>

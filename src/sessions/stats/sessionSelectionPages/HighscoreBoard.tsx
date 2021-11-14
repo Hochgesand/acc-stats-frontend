@@ -31,7 +31,7 @@ export default function HighscoreBoard(){
         <h1 className={"align-middle m-auto"}>Track scoreboard</h1>
       </div>
       <div className="overflow-x-auto mt-2">
-        <table className="table w-full">
+        <table className="table w-full table-zebra">
           <thead>
           <tr>
             <th/>

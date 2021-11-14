@@ -13,32 +13,28 @@ import AllSessionsTable from "./sessions/stats/sessionSelectionPages/AllSessions
 function App() {
   return (
     <div className={"h-full rounded-md m-4"}>
-      <div className={"flex flex-row"}>
-        <div className={"h-16 text-white mb-3 bg-base-200 rounded-box w-1/4 mr-4"}>
+      <div className={"flex flex-row h-10 md:h-16"}>
+        <div className={"mb-3 w-1/4 mr-4"}>
           <a href={"/"}>
-            <div className={"h-full w-full hover:bg-base-300 rounded-box flex items-center justify-center"}>
-              <span className={"text-sm md:text-2xl"}>Home</span>
-            </div>
+              <button className={"btn w-full h-full"}>Home</button>
           </a>
         </div>
-        <div className={"h-16 text-white mb-3 bg-base-200 rounded-box w-1/4 mr-4"}>
+        <div className={"mb-3 w-1/4 mr-4"}>
           <a href={"/sessions"}>
-            <div className={"h-full w-full hover:bg-base-300 rounded-box flex items-center justify-center"}>
-              <span className={"text-sm md:text-2xl"}>Sessions</span>
+            <div className={"h-full w-full hover:bg-base-200 rounded-box flex items-center justify-center"}>
+              <button className={"btn w-full h-full"}>Sessions</button>
             </div>
           </a>
         </div>
-        <div className={"h-16 text-white mb-3 bg-base-200 rounded-box w-1/4 mr-4"}>
+        <div className={"mb-3 w-1/4 mr-4"}>
           <a href={"/highscore"}>
-            <div className={"h-full w-full hover:bg-base-300 rounded-box flex items-center justify-center"}>
-              <span className={"text-sm md:text-2xl"}>Highscores per Track</span>
-            </div>
+            <button className={"btn w-full h-full"}>Highscores</button>
           </a>
         </div>
-        <div className={"h-16 text-white mb-3 bg-base-200 rounded-box w-1/4"}>
+        <div className={"mb-3 w-1/4"}>
           <a href={"/drivers"}>
-            <div className={"h-full w-full hover:bg-base-300 rounded-box flex items-center justify-center"}>
-              <span className={"text-sm md:text-2xl"}>Driver</span>
+            <div className={"h-full w-full hover:bg-base-200 rounded-box flex items-center justify-center"}>
+              <button className={"btn w-full h-full"}>Driver</button>
             </div>
           </a>
         </div>

@@ -54,7 +54,7 @@ export default function GeneralServerStats() {
 
   return (
     <div className={"w-auto m-auto flex items-center justify-center"}>
-      <div className={"h-auto text-white mb-3 bg-base-300 p-4 rounded-box w-full"}>
+      <div className={"h-auto text-base mb-3 bg-base-300 p-4 rounded-box w-full"}>
         <div className={"flex items-center justify-center flex-col"}>
           <p className={"text-2xl"}>Some general useless information about our servers:</p>
           <div className={"divider"}/>
